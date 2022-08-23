@@ -1,5 +1,3 @@
-// @flow
-
 import format from './rules/format';
 import noUnsafeQuery from './rules/noUnsafeQuery';
 
@@ -8,10 +6,10 @@ const rules = {
   'no-unsafe-query': noUnsafeQuery,
 };
 
-export default {
-  rules,
-  rulesConfig: {
-    format: 0,
-    'no-unsafe-query': 0,
-  },
+export {
+  rules
+  // rulesConfig: {
+  //   format: 0,
+  //   'no-unsafe-query': 0,
+  // },
 };
