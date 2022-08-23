@@ -1,17 +1,16 @@
 {
   "author": {
-    "email": "gajus@gajus.com",
-    "name": "Gajus Kuizinas",
-    "url": "http://gajus.com"
+    "email": "vgulaev@yandex.ru",
+    "name": "Valentin Gulaev",
+    "url": "http://vgit.ru"
   },
   "dependencies": {
     "astring": "^1.7.5",
     "debug": "^4.3.2",
     "lodash": "^4.17.21",
-    "pg-formatter": "^1.2.0",
-    "sql-parse": "^0.1.5"
+    "pg-formatter": "^1.2.0"
   },
-  "description": "SQL linting rules for ESLint.",
+  "description": "SQL linting rules for ESLint based on https://github.com/gajus/eslint-plugin-sql.",
   "devDependencies": {
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.7.6",
@@ -33,14 +32,14 @@
     "sql"
   ],
   "license": "BSD-3-Clause",
-  "main": "./dist/src/index.js",
-  "name": "eslint-plugin-sql",
+  "main": "./dist/src/index.ts",
+  "name": "eslint-plugin-sql-vg",
   "peerDependencies": {
     "eslint": ">=8.1.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gajus/eslint-plugin-sql"
+    "url": "https://github.com/vgulaev/eslint-plugin-sql-vg"
   },
   "scripts": {
     "build": "tsc",
