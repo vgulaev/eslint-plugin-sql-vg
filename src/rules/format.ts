@@ -7,10 +7,6 @@ import {
 import isSqlQuery from '../utilities/isSqlQuery';
 
 const create = (context) => {
-  const {
-    placeholderRule,
-  } = context.settings.sql;
-
   const pluginOptions = context.options?.[0] || {};
 
   const ignoreExpressions = pluginOptions.ignoreExpressions === true;
@@ -38,7 +34,7 @@ const create = (context) => {
         })
         .join(magic);
 
-      if (!sqlTagIsPresent && !isSqlQuery(literal, placeholderRule)) {
+      if (!sqlTagIsPresent && !isSqlQuery(literal)) {
         return;
       }
 
@@ -47,10 +43,6 @@ const create = (context) => {
       }
 
       let formatted = format(literal, context.options[1]);
-
-      if (ignoreStartWithNewLine && literal.startsWith('\n') && !formatted.startsWith('\n')) {
-        formatted = '\n' + formatted;
-      }
 
       if (formatted !== literal) {
         context.report({
@@ -69,7 +61,7 @@ const create = (context) => {
             return fixer.replaceTextRange([
               node.quasis[0].range[0],
               node.quasis[node.quasis.length - 1].range[1],
-            ], '`\n' + final + '`');
+            ], '`' + final + '`');
           },
           message: 'Format the query',
           node,
@@ -129,6 +121,9 @@ export default {
           noRcFile: {
             default: false,
             type: 'boolean',
+          },
+          placeholder: {
+            type: 'string',
           },
           spaces: {
             type: 'number',

@@ -6,10 +6,12 @@ const rules = {
   'no-unsafe-query': noUnsafeQuery,
 };
 
+const rulesConfig = {
+  format: 0,
+  'no-unsafe-query': 0,
+}
+
 export {
-  rules
-  // rulesConfig: {
-  //   format: 0,
-  //   'no-unsafe-query': 0,
-  // },
+  rules,
+  rulesConfig
 };
