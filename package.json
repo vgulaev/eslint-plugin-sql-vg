@@ -5,6 +5,7 @@
     "url": "http://vgit.ru"
   },
   "dependencies": {
+    "@types/estree": "^1.0.0",
     "astring": "^1.7.5",
     "debug": "^4.3.2",
     "lodash": "^4.17.21",
@@ -32,7 +33,7 @@
     "sql"
   ],
   "license": "BSD-3-Clause",
-  "main": "./dist/src/index.ts",
+  "main": "./dist/src/index.js",
   "name": "eslint-plugin-sql-vg",
   "peerDependencies": {
     "eslint": ">=8.1.0"
@@ -48,5 +49,6 @@
     "lint": "eslint ./src ./test && tsc --noEmit",
     "test": "mocha --require tsx test/**/*"
   },
-  "version": "1.0.1"
+  "files": ["dist/**/*"],
+  "version": "1.0.3"
 }
